@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan&family=Rubik&display=swap');
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+.content:before {
+  content: "";
+  position: fixed;
+  left: -5px;
+  right: -5px;
+  top: -5px;
+  bottom: -5px;
+  z-index: -1;
+  display: block;
+  background-image: url('https://img.wallpapersafari.com/desktop/1600/900/79/79/4p27kj.jpg');
+  background-size: 101.5%;
+  filter: blur(5px);
+}
+
+.content {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  text-align: center;
+  color: white;
+  font-weight: 700;
+  text-shadow: 2px 2px #000;
+  margin-top: -15px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+:focus {
+  outline: none;
+}
+
+.logo {
+  width: 400px;
+}
+
+div {
+  margin: 3rem auto;
+  max-width: 660px;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+button {
+  overflow: visible;
+  border: 0;
+  padding: 0;
+  margin: 2rem;
+  margin-top: -30px;
+}
+
+.btn.striped-shadow span {
+  display: block;
+  position: relative;
+  z-index: 2;
+  border: 5px solid;
+}
+
+.btn.striped-shadow.green span {
+  border-color: #fff;
+  color: #fff;
+  background: #24801c;
+}
+
+.btn.striped-shadow.blue span {
+  border-color: #fff;
+  color: #fff;
+  background: #1c2480;
+}
+
+.btn.striped-shadow.red span {
+  border-color: #fff;
+  color: #fff;
+  background: #801c1c;
+}
+
+.btn {
+  font-family: Fjalla One;
+  height: 80px;
+  line-height: 65px;
+  display: inline-block;
+  letter-spacing: 2px;
+  position: relative;
+  font-size: 1.35rem;
+  transition: opacity .3s, z-index .3s step-end, -webkit-transform .3s;
+  transition: opacity .3s, z-index .3s step-end, transform .3s;
+  transition: opacity .3s,
+    z-index .3s step-end,
+    transform .3s,
+    -webkit-transform .3s;
+  z-index: 1;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn {
+  width: 155px;
+  height: 48px;
+  line-height: 38px;
+}
+
+button.btn.striped-shadow.green:after,
+button.btn.striped-shadow.green:before {
+  background-image: linear-gradient(135deg,
+      transparent 0,
+      transparent 5px,
+      #fff 5px,
+      #fff 10px,
+      transparent 10px);
+}
+
+button.btn.striped-shadow.blue:after,
+button.btn.striped-shadow.blue:before {
+  background-image: linear-gradient(135deg,
+      transparent 0,
+      transparent 5px,
+      #fff 5px,
+      #fff 10px,
+      transparent 10px);
+}
+
+button.btn.striped-shadow.red:after,
+button.btn.striped-shadow.red:before {
+  background-image: linear-gradient(135deg,
+      transparent 0,
+      transparent 5px,
+      #fff 5px,
+      #fff 10px,
+      transparent 10px);
+}
+
+button.btn.striped-shadow:hover:before {
+  max-height: calc(100% - 10px);
+}
+
+button.btn.striped-shadow:after {
+  width: calc(100% - 4px);
+  height: 8px;
+  left: -10px;
+  bottom: -9px;
+  background-size: 15px 8px;
+  background-repeat: repeat-x;
+}
+
+button.btn.striped-shadow:after,
+button.btn.striped-shadow:before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 1;
+  transition: max-height .3s, width .3s, -webkit-transform .3s;
+  transition: transform .3s, max-height .3s, width .3s;
+  transition: transform .3s, max-height .3s, width .3s, -webkit-transform .3s;
+}
+
+.btn.striped-shadow:hover {
+  -webkit-transform: translate(-12px, 12px);
+  -ms-transform: translate(-12px, 12px);
+  transform: translate(-12px, 12px);
+  z-index: 3;
+}
+
+button.btn.striped-shadow:hover:after,
+button.btn.striped-shadow:hover:before {
+  -webkit-transform: translate(12px, -12px);
+  -ms-transform: translate(12px, -12px);
+  transform: translate(12px, -12px);
+}
+
+button.btn.striped-shadow:before {
+  width: 8px;
+  max-height: calc(100% - 5px);
+  height: 100%;
+  left: -12px;
+  bottom: -5px;
+  background-size: 8px 15px;
+  background-repeat: repeat-y;
+  background-position: 0 100%;
+}
+
+.modal__btn a {
+  font-family: Fjalla One;
+  font-size: 1.35rem;
+  padding: 15px 30px;
+  background-color: #000;
+  text-transform: uppercase;
+  border: 5px solid #fff;
+  height: auto;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+.modal__box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, .5);
+  transition: all 0.3s ease-in-out;
+  max-width: 800px;
+}
+
+.modal__box:target {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal__content {
+  position: relative;
+  max-width: 640px;
+  background-color: #fff;
+  padding: 20px;
+  font-family: League Spartan;
+  font-size: 18px;
+}
+
+.modal__close {
+  font-size: 30px;
+  font-weight: 700;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: red;
+  text-decoration: none;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.tbold {
+  font-weight: bold;
+  font-size: 35px;
+  color: red;
+}
